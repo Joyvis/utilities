@@ -43,6 +43,20 @@ Bundle 'tpope/vim-dispatch'
 
 Bundle 'plasticboy/vim-markdown'
 
+" Automatically close HTML/XML tags.
+Bundle 'alvan/vim-closetag'
+
+" Highlighting HTML tags
+Bundle 'valloric/MatchTagAlways'
+
+" Highlights to jsx syntax
+Bundle 'mxw/vim-jsx'
+
+" Emmet for vim
+Bundle 'mattn/emmet-vim'
+
+" Config emmet leader key 
+let g:user_emmet_leader_key=','
 
 set tags=./tags; " Set tags directory
 set autoindent " Auto indention should be on
@@ -58,7 +72,7 @@ augroup myfiletypes
 	" Clear old autocmds in group
 	autocmd!
 	" autoindent with two spaces, always expand tabs
-	autocmd FileType ruby,eruby,yaml,markdown set ai sw=2 sts=2 et
+	autocmd FileType ruby,eruby,yaml,markdown,javascript set ai sw=2 sts=2 et
 augroup END
 " ================
 
@@ -72,6 +86,23 @@ let g:molokai_original=1
 let g:rehash256=1
 set t_Co=256
 colorscheme molokai
+
+" Config closetag
+let g:closetag_filenames = '*.html,*.xhtml,*.xml,*.js,*.html.erb,*.md'
+
+" Config highlights to html tags
+let g:mta_filetypes = {
+    \ 'html' : 1,
+    \ 'javascript.jsx' : 1,
+    \ 'jinja' : 1,
+    \ 'liquid' : 1,
+    \ 'markdown' : 1,
+    \ 'xhtml' : 1,
+    \ 'xml' : 1,
+    \ 'javascript' : 1,
+    \}
+" Let vim-jsx handle JSX in `.js` files
+let g:jsx_ext_required = 0
 
 " Show trailing whitespace and spaces before a tab:
 :highlight ExtraWhitespace ctermbg=red guibg=red
@@ -187,3 +218,6 @@ if exists('+colorcolumn')
 else
   au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 endif
+
+" Custom commands
+:command Stl :normal gg I# frozen_string_literal: true<ENTER><BACKSPACE><BACKSPACE><ENTER><ESC>
