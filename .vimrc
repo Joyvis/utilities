@@ -55,8 +55,22 @@ Bundle 'mxw/vim-jsx'
 " Emmet for vim
 Bundle 'mattn/emmet-vim'
 
+" Javascript highlights 
+Bundle 'pangloss/vim-javascript'
+
+" Elixir highlights
+Bundle 'elixir-editors/vim-elixir'
+
+" Autocomplete
+Bundle 'neoclide/coc.nvim', {'branch': 'release'}
+
 " Config emmet leader key 
 let g:user_emmet_leader_key=','
+
+" Config vim-javascript highlights
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_ngdoc = 1
+let g:javascript_plugin_flow = 1
 
 set tags=./tags; " Set tags directory
 set autoindent " Auto indention should be on
@@ -182,7 +196,8 @@ set directory+=~/.vim/swap//
 set directory+=~/tmp//
 set directory+=.
 
-set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
+" set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
+set rtp+=$HOME/Library/Python/3.7/lib/python/site-packages/powerline/bindings/vim/
 
 " Always show statusline
 set laststatus=2
