@@ -1,3 +1,4 @@
+https://www.codewars.com/collections/8-kyu-2
 1.
 ovelhas = [true,  true,  true,  false, false, true, false, true]
 
