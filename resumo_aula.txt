@@ -1,0 +1,43 @@
+1.
+ovelhas = [true,  true,  true,  false, false, true, false, true]
+
+contador = 0
+ovelhas.each do |ovelha|
+    if(ovelha)
+        contador += 1
+    end
+end
+
+p contador
+
+2.
+lista = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+resultado = []
+contador = 0
+lista.each do |item|
+    if(contador != 1)
+        resultado << item
+    end
+    
+    contador += 1
+end
+
+p resultado
+
+3.
+inteiro = 5
+limite = 25
+
+acumulado = 0
+contador = 1
+resultado = []
+
+while(true)    
+    acumulado = inteiro * contador
+    contador += 1
+    break if acumulado > limite
+    
+    resultado << acumulado
+end
+
+p resultado
